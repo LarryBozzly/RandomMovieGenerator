@@ -543,7 +543,6 @@ export default class Home extends React.Component {
             />
             <p className="RatingSlider">Rating > {this.state.valueSlider}</p>
           </div>
-
           <button
             className="Refresh"
             onClick={() => {
