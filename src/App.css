@@ -1,38 +1,280 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  display:flex;
   min-height: 100vh;
+  flex-direction: column;
+  text-align: center;
+  color:white;
+  background-color: #121212;
+}
+.Card{
+  background-color: #202020;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  padding: 0.5%;
+}
+@media only screen and (max-width: 1100px) {
+  .Card{
+    margin: 5%;
+  }
+}
+.Header_Release_Date_Container
+{
+  display: flex;
+  flex-direction: row;
+}
+.Header{
+  align-self: baseline;
+  text-align: left;
+}
+.Release_Date
+{
+  align-self: baseline;
+  font-size: 150%;
+  max-height: 80px;
+}
+
+.Genre_List{
+  text-align: left;
+  word-break: break-all;
+}
+.Overview{
+  text-align: left;
+}
+.Poster{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+}
+.player-wrapper {
+  display:flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 5%;
+}
+
+.react-player{
+  justify-content: center;
+  align-content: center;
+  background-color: rgb(0, 0, 0);
+  box-shadow: 0 2px 8px 0 rgba(255, 255, 255, 0.2), 0 3px 10px 0 rgba(255, 255, 255, 0.19);
+}
+@media only screen and (max-width: 732px) {
+  .react-player{
+    width: 85vw;
+  }
+}
+.react-player-hidden
+{
+  visibility: hidden;
+}
+.Refresh{
+  background-color:#FFC200;
+  border: none;
+  color: black;
+  padding: 10px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 130%;
+  width: 20%;
+  align-self:center;
+  min-width: 150px;
+  margin-bottom: 2%;
+}
+.Refresh:hover{
+  cursor: pointer;
+}
+.Refresh:active
+{
+  outline:none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;        
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  animation-name: buttonAnim;
+  animation-duration: 1;
+  animation-fill-mode: forwards;
+}
+@keyframes buttonAnim{
+  100% {
+  color:white;
+  background-color: rgba(0,0,0,0.5); 
+  }
+}
+.filter-container
+{
+  margin-bottom: calc(10vh * (8/16));
+  animation-name: animatefilter;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  margin-top: -15%;
+  opacity: 0;
+
+}
+@keyframes animatefilter{
+  100% {margin-top: 0%;opacity: 1;
+  }
+}
+
+.filter-container-small{
+  display: none;
+}
+.filter-button{
+  background-color:#FFC200;
+  border: none;
+  color: black;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 130%;
+  width: 8%;
+  align-self:center;
+  min-width: 80px;
+  margin-bottom: 2%;
+  background-image: url("./images/arrow.png");
+  background-size: auto;
+  background-repeat:no-repeat;
+  background-position: center center;
+  background-size: 22%;
+}
+
+.filter-button:hover{
+  cursor: pointer;
+}
+.filter-button:active
+{
+  outline:none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;        
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none; 
+  animation-name: buttonAnim;
+  animation-duration: 1;
+  animation-fill-mode: forwards;
+}
+ @media only screen and (max-width: 728px) {
+  .filter-button
+  {
+    margin-bottom: 5%;
+  }
+}
+
+.Filter{
+  text-align: center;
+  background-color:rgb(255, 255, 255);
+  border: none;
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9em;
+  padding: 1em;
+  min-width: 150px;
+  align-self:center;
+  margin: 1%;
+}
+.Filter:hover{
+  cursor: pointer;
+}
+.Filter:active
+{
+  -webkit-user-select: none;        
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  outline:none;
+  animation-name: buttonAnim;
+  animation-duration: 1;
+  animation-fill-mode: forwards;
+}
+.Filter-Disabled
+{
+  text-align: center;
+  background-color:rgb(0, 0, 0);
+  border: none;
   color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9em;
+  padding: 0.7em;
+  min-width: 150px;
+  align-self:center;
+  margin: 1%;
+}
+.Filter-Disabled:hover{
+  cursor: pointer;
+}
+.Footer{
+  min-height: 20px;
+  min-width: 20px;
+  background-image: url("https://www.themoviedb.org/assets/2/v4/logos/v2/blue_short-8e7b30f73a4020692ccca9c88bafe5dcb6f8a62a4c6bc55cd9ba82bb2cd95f6c.svg");
+  background-repeat:no-repeat;
+  background-position: center center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+.slidecontainer{
+  margin-left:auto;
+  margin-right:auto;
+  width:70%;
+}
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+.slider:hover {
+  opacity: 1;
+}
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background:#FFC200;
+  cursor: pointer;
+}
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background:#FFC200;
+  cursor: pointer;
+}
+.RatingSlider{
+  font-weight: bold;
+}
+.loader {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid #FFC200;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom: 2%;
 }
 
-.App-link {
-  color: #61dafb;
+@media only screen and (max-width: 1100px) {
+  .Card{
+    margin: 5%;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
